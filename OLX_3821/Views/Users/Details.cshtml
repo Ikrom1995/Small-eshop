@@ -1,0 +1,83 @@
+﻿@model OLX_3821.Models.Users
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Users</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.firstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.firstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eMail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eMail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.balance)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.balance)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.username)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.uPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.uPassword)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.userID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

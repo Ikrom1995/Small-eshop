@@ -1,0 +1,89 @@
+﻿@model IEnumerable<OLX_3821.Models.Report>
+
+@{
+    ViewBag.Title = "CompanyReport";
+}
+
+<h2>CompanyReport</h2>
+
+@using (@Html.BeginForm("CompanyReport", "Poster"))
+{
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.Label("Customer", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("id", new SelectList(ViewBag.Users, "userID", "fullName"), "--Select--", new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.Label("Min Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("min", "", new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Max Price", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBox("max", "", new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.userID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.totalSpent)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.userID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.category)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.totalSpent)
+        </td>
+    </tr>
+}
+
+</table>
